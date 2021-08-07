@@ -41,15 +41,16 @@ namespace VyTrackTestAutomation.UITests
                 Console.WriteLine("Create a car Test is started.");
                 all.TopMenu(driver).goToVehiclesPage();
                 all.TopMenu(driver).CreateAVehicle();
-                all.CreateVehiclesModelPage(driver).createVehicleModel(LocalStrings.modelName,
+                all.CreateVehiclesModelPage(driver).createVehicleModel(
+                                            LocalStrings.modelName,
                                             LocalStrings.make,
-                                            LocalStrings.canBeRequested,
+                                         //   LocalStrings.canBeRequested,
                                             LocalStrings.catalogValue,
                                             LocalStrings.co2Fee,
                                             LocalStrings.cost,
                                             LocalStrings.totalCost,
                                             LocalStrings.co2Emmisions,
-                                            LocalStrings.fuelType,
+                                        //    LocalStrings.fuelType,
                                             LocalStrings.vendor);
 
 

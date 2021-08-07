@@ -47,17 +47,7 @@ namespace VyTrackTestAutomation.Utilities
 
         protected void UsePipelineSettings()
         {
-            URL = (string)TestContext.Parameters["URL"];
-
-            if (!Enum.TryParse((string)TestContext.Parameters["ENVIRONMENT"], out environment))
-            {
-                //Log parsing error
-            }
-
-            if (!Enum.TryParse((string)TestContext.Parameters["BROWSER"], out browserType))
-            {
-                //Log parsing error
-            }
+            URL = (string)TestContext.Parameters["URL"];           
 
             SetDriver(true);
         }
@@ -80,32 +70,8 @@ namespace VyTrackTestAutomation.Utilities
             driver.Navigate().GoToUrl(URL);
 
             //driver.Manage().Logs.GetLog(LogType.Browser);
-        }
-
-        protected void LaunchBrowserEcommLogin()
-        {
-            SetRunSettings();
-
-            driver.Manage().Window.Maximize();
-
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(LocalTestProperties.IMPLICIT_WAIT_TIME_SECONDS);
-
-            //  driver.Navigate().GoToUrl("https://vytrack.com/");
-            driver.Navigate().GoToUrl("https://vytrack.com/");
-
-        }
-
-        protected void LaunchBrowserCustomerPortalLoginPage()
-        {
-            SetRunSettings();
-
-            driver.Manage().Window.Maximize();
-
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(LocalTestProperties.IMPLICIT_WAIT_TIME_SECONDS);
-
-            driver.Navigate().GoToUrl("https://vytrack.com/");
-
-        }
+        }      
+       
         public void CloseBrowser()
         {
             TakeScreenShot();
@@ -151,7 +117,7 @@ namespace VyTrackTestAutomation.Utilities
                         chromeOptions.AddArguments("headless");
                     }
 
-                    driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), chromeOptions);
+                    driver = new ChromeDriver(@"C:\Users\19726\source\repos\VyTrackTestAutomation\packages\Selenium.WebDriver.ChromeDriver.92.0.4515.10700\driver\win32");
                     break;
 
             }

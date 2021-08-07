@@ -20,8 +20,7 @@ namespace VyTrackTestAutomation.Pages
         public LoginPage(IWebDriver driver)  
         {
             Console.WriteLine("Home Page Object Model created.");
-            this.driver = driver;
-            commons.InitPageElementsIfPageLoads();
+            this.driver = driver;         
             Thread.Sleep(1500);
             PageFactory.InitElements(driver, this);
         }
@@ -42,7 +41,7 @@ namespace VyTrackTestAutomation.Pages
         public void login()
         {
             Console.WriteLine("Login called.");
-            Thread.Sleep(6000);
+            Thread.Sleep(1000);
             loginButton.Click();
             username.SendKeys(LocalStrings.Username);
             password.SendKeys(LocalStrings.Password);

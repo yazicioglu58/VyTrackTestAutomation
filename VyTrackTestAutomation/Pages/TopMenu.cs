@@ -25,8 +25,7 @@ namespace VyTrackTestAutomation.Pages
         public TopMenu(IWebDriver driver)
         {
             Console.WriteLine("TopMenu Page Object Model created.");
-             this.driver = driver;
-            commons.InitPageElementsIfPageLoads();
+             this.driver = driver;        
             Thread.Sleep(1500);
             PageFactory.InitElements(driver, this);
         }
@@ -46,9 +45,9 @@ namespace VyTrackTestAutomation.Pages
             Console.WriteLine("goToVehiclesPage method is started.");
 
             Actions action = new Actions(driver);
-            Thread.Sleep(8000);
+            Thread.Sleep(1000);
             action.MoveToElement(fleet).Perform();
-            Thread.Sleep(5000);
+            Thread.Sleep(1000);
             vehiclesModel.Click();
         }
 
@@ -56,7 +55,7 @@ namespace VyTrackTestAutomation.Pages
         {
             Console.WriteLine("CreateAVehicle method is started.");
 
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
             createVehicleModel.Click();
         }
 
