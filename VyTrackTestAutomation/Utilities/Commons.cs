@@ -95,5 +95,12 @@ namespace VyTrackTestAutomation.Utilities
             SelectElement select = new SelectElement(element);
             select.SelectByText(value);
         }
+
+        public void sendKeysTest(IWebElement element, string value)
+        {
+            element.Clear();
+            element.SendKeys(value);
+            
+        }
     }
 }
