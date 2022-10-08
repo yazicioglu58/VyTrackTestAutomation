@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,8 +34,28 @@ namespace VyTrackTestAutomation.UITests
         }
 
     [TestMethod]
-    public void Test()
+     public void Test()
     {
+
+            List<string> listing = new List<string>();
+            listing.Add("one");
+            listing.Add("two");
+            listing.Add("two");
+            listing.Add("three");
+            listing.Add("three");
+            listing.Add("three");
+
+            listing.Reverse();
+
+            string newman = "great";
+            Console.WriteLine(newman.Reverse());
+
+            foreach (string str in listing)
+            {
+                Console.WriteLine(str);
+               
+            } 
+
             try
             {
 
@@ -52,8 +73,7 @@ namespace VyTrackTestAutomation.UITests
                                             LocalStrings.co2Emmisions,
                                         //    LocalStrings.fuelType,
                                             LocalStrings.vendor);
-
-
+                 
             } 
             catch (Exception ex)
             {

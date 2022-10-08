@@ -117,7 +117,8 @@ namespace VyTrackTestAutomation.Utilities
                         chromeOptions.AddArguments("headless");
                     }
 
-                    driver = new ChromeDriver(@"C:\Users\19726\source\repos\VyTrackTestAutomation\packages\Selenium.WebDriver.ChromeDriver.92.0.4515.10700\driver\win32");
+                 //  driver = new ChromeDriver(@"C:\Users\19726\source\repos\VyTrackTestAutomation\packages\Selenium.WebDriver.ChromeDriver.92.0.4515.10700\driver\win32");
+                    driver = new ChromeDriver();
                     break;
 
             }
