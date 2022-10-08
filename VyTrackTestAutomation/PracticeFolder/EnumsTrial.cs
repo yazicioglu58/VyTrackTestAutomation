@@ -62,5 +62,7 @@ namespace VyTrackTestAutomation.PracticeFolder
         public string Name { get; set; }
         public int Gender { get; set; }
     }
+
+   
 }
 

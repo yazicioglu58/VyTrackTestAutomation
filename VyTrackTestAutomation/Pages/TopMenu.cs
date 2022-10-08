@@ -34,6 +34,9 @@ namespace VyTrackTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = "(//span[@class='title title-level-1'])[2]")]
         private IWebElement fleet;
 
+        [FindsBy(How = How.XPath, Using = "(//span[@class='title title-level-1'])[3]")]
+        private IWebElement fleet2;
+
         [FindsBy(How = How.XPath, Using = "//span[contains(text(), 'Vehicles Model')]")]
         private IWebElement vehiclesModel;
 

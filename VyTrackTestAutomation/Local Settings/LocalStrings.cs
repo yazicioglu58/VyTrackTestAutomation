@@ -15,12 +15,13 @@ namespace VyTrackTestAutomation.Local_Settings
     public static string make = "Civic";
     public static string canBeRequested = "Yes";
     public static string catalogValue = "17250";
-    public static string co2Fee = "650";
+    public static string co2Fee = "6500";
     public static string cost = "17900";
     public static string totalCost = 17900*1.25 +"";
     public static string co2Emmisions = "Verified";
     public static string fuelType = "Electric";
     public static string vendor = "Granville LLC";
+    public static string vendor2 = "Little Rock LLC";
     
 }
 }
