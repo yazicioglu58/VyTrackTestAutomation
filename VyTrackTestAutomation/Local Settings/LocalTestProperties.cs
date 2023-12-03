@@ -10,7 +10,7 @@ namespace VyTrackTestAutomation.Local_Settings
     public class LocalTestProperties
     {
         public static TestEnvironment DEFAULT_ENVIRONMENT = TestEnvironment.Dev;
-        public static BrowserType DEFAULT_BROWSER_TYPE = BrowserType.Edge;
+        public static BrowserType DEFAULT_BROWSER_TYPE = BrowserType.Chrome;
 
         public static string URL_QA = "https://vytrack.com/";
         public static string URL_DEV = "https://vytrack.com/";

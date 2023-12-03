@@ -45,7 +45,7 @@ namespace VyTrackTestAutomation.Pages
     
     public void goToVehiclesPage()
         {
-            Console.WriteLine("goToVehiclesPage method is started.");
+            Console.WriteLine("goToVehiclesPage method is just started.");
 
             Actions action = new Actions(driver);
             Thread.Sleep(1000);

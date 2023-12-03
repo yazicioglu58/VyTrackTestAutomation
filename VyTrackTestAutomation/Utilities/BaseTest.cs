@@ -20,19 +20,7 @@ namespace VyTrackTestAutomation.Utilities
         protected TestEnvironment environment;
         protected string URL;
 
-        //  public static TestContext testContextInstance;
-        //   public TestContext TestContext
-        //  {
-        //      get
-        //    {
-        //      return testContextInstance;
-        //   }
-        //   set
-        //   {
-        //    testContextInstance = value;
-        //   }
-        //  }              
-
+      
         protected void SetRunSettings()
         {
             if ((string)TestContext.Parameters["RUNFROMPIPELINE"] == "true")
@@ -68,13 +56,10 @@ namespace VyTrackTestAutomation.Utilities
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(LocalTestProperties.IMPLICIT_WAIT_TIME_SECONDS);
 
             driver.Navigate().GoToUrl(URL);
-
-            //driver.Manage().Logs.GetLog(LogType.Browser);
         }      
        
         public void CloseBrowser()
-        {
-            TakeScreenShot();
+        {            
             driver.Quit();
         }
 
@@ -85,9 +70,6 @@ namespace VyTrackTestAutomation.Utilities
                 if ((string)TestContext.Parameters["RUNFROMPIPELINE"] == "true")
                 {
                     Screenshot screenShot = ((ITakesScreenshot)driver).GetScreenshot();
-                    //    string path = Directory.GetCurrentDirectory() + testContextInstance.FullyQualifiedTestClassName + ".png";
-                    //     screenShot.SaveAsFile(path);
-                    //   TestContext.AddResultFile(path);
                 }
             }
             catch (Exception ex)
@@ -116,48 +98,11 @@ namespace VyTrackTestAutomation.Utilities
                     {
                         chromeOptions.AddArguments("headless");
                     }
-
-                 //  driver = new ChromeDriver(@"C:\Users\19726\source\repos\VyTrackTestAutomation\packages\Selenium.WebDriver.ChromeDriver.92.0.4515.10700\driver\win32");
                     driver = new ChromeDriver();
                     break;
 
             }
         }
        
-        protected void SetRunSettings(string Type)
-        {
-            if ((string)TestContext.Parameters["RUNFROMPIPELINE"] == "true")
-            {
-                UsePipelineSettings();
-            }
-            else
-            {
-                UseLocalSettings(Type);
-            }
-        }
-
-        protected void UseLocalSettings(String Type)
-        {
-            if (Type.Equals("Acquisition"))
-                URL = LocalTestProperties.GetURLForDefaultEnv();
-            else if (Type.Equals("Customer"))
-                URL = LocalTestProperties.GetURLForDefaultEnv();
-            else
-                Assert.Fail("Not valid url type provided");
-            browserType = LocalTestProperties.DEFAULT_BROWSER_TYPE;
-            SetDriver(false);
-        }
-
-        protected void LaunchBrowser(String Type)
-        {
-            SetRunSettings(Type);
-
-            driver.Manage().Window.Maximize();
-
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(LocalTestProperties.IMPLICIT_WAIT_TIME_SECONDS);
-
-            driver.Navigate().GoToUrl(URL);
-
-        }
     }
 }
